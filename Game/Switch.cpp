@@ -1,18 +1,16 @@
 //__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/
-//! @file   MoveBlock.cpp
+//! @file   Switch.cpp
 //!
-//! @brief  挟むギミックのソースファイル
+//! @brief  スイッチのソースファイル
 //!
-//! @date   2017/04/07		
+//! @date   2017/04/09		
 //!
 //! @author 渡邊真人
 //__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/
 
-//ヘッダファイルの読込
-#include "MoveBlock.h"
+//ヘッダファイルのインクルード
+#include "Switch.h"
 
-
-//関数の定義＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝－
 //----------------------------------------------------------------------
 //! @brief コンストラクタ
 //!
@@ -20,48 +18,34 @@
 //!
 //! @return なし
 //----------------------------------------------------------------------
-Moveblock::Moveblock()
+Switch::Switch(int pos_x, int pos_y)
 {
-	
-	m_handle = new Texture(L"Resources\\Images\\orange.png");;
+	m_handle  = new Texture(L"Resources\\Images\\switch.png");
 	m_grp_x = 0;
 	m_grp_y = 0;
-	m_grp_w = M_BLOCK_GRP_W;
-	m_grp_h = M_BLOCK_GRP_H;
-	m_pos_x = M_BLOCK_POS_X;
-	m_pos_y = 0;
-	m_state = 0;
+	m_grp_w = M_SWTICH_GRP;
+	m_grp_h = M_SWTICH_GRP;
+	m_pos_x = pos_x;
+	m_pos_y = pos_y;
 }
 
 //----------------------------------------------------------------------
 //! @brief デストラクタ
 //!
 //----------------------------------------------------------------------
-Moveblock::~Moveblock()
+Switch::~Switch()
 {
 	delete m_handle;
 	m_handle = nullptr;
 }
 
-
 //----------------------------------------------------------------------
-//! @brief ギミックの上下移動
+//! @brief スイッチのオンオフの切り替え
 //!
 //! @return なし
 //----------------------------------------------------------------------
-void Moveblock::MoveUpDown()
+void Switch::Swtiching()
 {
-	if (m_state == 1)
-	{
-		if (m_pos_y_min == m_pos_y)
-		{
-			SetSpdY(M_BLOCK_SPD_Y_DOWN);
-		}
-		else if (m_pos_y_max == m_pos_y)
-		{
-			SetSpdY(M_BLOCK_SPD_Y_UP);
-		}
-	}
+	m_grp_x = M_SWTICH_GRP;
 }
-
 

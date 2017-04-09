@@ -27,7 +27,6 @@ using namespace std;
 //----------------------------------------------------------------------
 Play::Play()
 {
-
 	m_stage = new Stage;	//ステージ
 	m_moveblock = new Moveblock;	//上下に動くギミック
 
@@ -75,11 +74,14 @@ void Play::Update()
 	//プレイ画面
 	if (!m_pause_flag)
 	{
+		//上下に動くギミックの更新
+		m_moveblock->Update();
+
 		//ステージの更新
 		m_stage->Update();
 
-		//上下に動くギミックの更新
-		m_moveblock->Update();
+		
+
 		if (g_keyTracker->pressed.X)
 		{
 			m_pause_flag = true;
@@ -153,8 +155,9 @@ void Play::Render()
 
 
 	//上下に動くギミックの描画
-	m_moveblock->Render();
+	//m_moveblock->Render();
 
+	
 
 	//オブジェクトの描画
 	m_stage->ObjectDraw();

@@ -17,6 +17,7 @@
 #include "Object\SidePress.h"
 #include "MoveBlock.h"
 
+
 //ƒNƒ‰ƒX
 class Play:public GameBase
 {
