@@ -19,7 +19,11 @@
     <ClCompile Include="ImaseLib\FPSTimer.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Texture.cpp" />
+<<<<<<< HEAD
     <ClCompile Include="Game\Switch.cpp" />
+=======
+    <ClCompile Include="Game\Camera.cpp" />
+>>>>>>> fccdf502d1c2d46300c40296220d0f8cc1fa8af5
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ADX2Le.h" />
@@ -42,7 +46,11 @@
     <ClInclude Include="ImaseLib\FPSTimer.h" />
     <ClInclude Include="MemoryLeakDetector.h" />
     <ClInclude Include="Texture.h" />
+<<<<<<< HEAD
     <ClInclude Include="Game\Switch.h" />
+=======
+    <ClInclude Include="Game\Camera.h" />
+>>>>>>> fccdf502d1c2d46300c40296220d0f8cc1fa8af5
   </ItemGroup>
   <ItemGroup>
     <None Include="myfile.spritefont" />

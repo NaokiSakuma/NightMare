@@ -3,9 +3,9 @@
 //!
 //! @brief  ゲーム関連のヘッダファイル
 //!
-//! @date   2016/11/04		
+//! @date   2017/04/08		
 //!
-//! @author 山田唯真
+//! @author 加藤 竜哉
 //__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/__/
 
 // 多重インクルードの防止 ==================================================
@@ -33,8 +33,8 @@
 #define GAME_TITLE "NightMare"
 
 // ゲーム画面
-#define SCREEN_WIDTH  640    // 幅[pixel]
-#define SCREEN_HEIGHT 480    // 高さ[pixel]
+//#define SCREEN_WIDTH  640    // 幅[pixel]
+//#define SCREEN_HEIGHT 480    // 高さ[pixel]
 
 
 //　列挙型宣言

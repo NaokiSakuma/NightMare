@@ -60,6 +60,11 @@ void Player::Move()
 	}
 	//重力
 	m_spd_y += PLAYER_GRAVITY;
+	//エリア外に行かないようにする
+	if (m_pos_x <= 0)
+	{
+		m_pos_x = 0;
+	}
 }
 
 //----------------------------------------------------------------------
@@ -72,5 +77,35 @@ void Player::Move()
 void Player::Ground()
 {
 	m_jump_flag = false;
+}
+
+//----------------------------------------------------------------------
+//! @brief プレイヤーの大きさを変える
+//!
+//! @param[in] なし
+//!
+//! @return なし
+//----------------------------------------------------------------------
+void Player::ChangePlayer()
+{
+	if (m_grp_h == PLAYER_GRP && g_keyTracker->pressed.A)
+	{
+		m_grp_h = PLAYER_GRP / 2;
+		m_grp_w = PLAYER_GRP;
+	}
+	else if (m_grp_h == PLAYER_GRP / 2 && g_keyTracker->pressed.A)
+	{
+		m_grp_h = PLAYER_GRP;
+	}
+	if (m_grp_w == PLAYER_GRP && g_keyTracker->pressed.S)
+	{
+		m_grp_w = PLAYER_GRP / 2;
+		m_grp_h = PLAYER_GRP;
+	}
+	else if (m_grp_w == PLAYER_GRP / 2 && g_keyTracker->pressed.S)
+	{
+		m_grp_w = PLAYER_GRP;
+	}
+
 }
 

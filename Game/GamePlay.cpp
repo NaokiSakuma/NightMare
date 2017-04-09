@@ -28,7 +28,6 @@ using namespace std;
 Play::Play()
 {
 	m_stage = new Stage;	//ステージ
-	m_moveblock = new Moveblock;	//上下に動くギミック
 
 	//	ポーズ画像
 	m_pause_image = new Texture(L"Resources\\Images\\pause.png");
@@ -56,8 +55,6 @@ Play::~Play()
 {
 	delete m_stage;	//ステージ
 	m_stage = nullptr;
-	delete m_moveblock;	//上下に動くギミック
-	m_moveblock = nullptr;
 
 }
 
@@ -74,13 +71,8 @@ void Play::Update()
 	//プレイ画面
 	if (!m_pause_flag)
 	{
-		//上下に動くギミックの更新
-		m_moveblock->Update();
-
 		//ステージの更新
 		m_stage->Update();
-
-		
 
 		if (g_keyTracker->pressed.X)
 		{
@@ -101,6 +93,11 @@ void Play::Update()
 
 			//	選択用変数が選択肢を超えたら上に戻る
 			if (m_pause_select > RETURN_TITLE)
+			{
+				m_pause_select = RETURN;
+			}
+			//	Xキーが押されたらポーズフラグをtrueにする
+			if (g_keyTracker->pressed.X)
 			{
 				m_pause_select = RETURN;
 			}
@@ -153,12 +150,7 @@ void Play::Render()
 	//ステージの描画
 	m_stage->DrawStage();
 
-
-	//上下に動くギミックの描画
-	//m_moveblock->Render();
-
 	
-
 	//オブジェクトの描画
 	m_stage->ObjectDraw();
 
