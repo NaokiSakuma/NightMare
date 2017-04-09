@@ -220,10 +220,6 @@ void Stage::Update()
 	m_player->Move();	//移動
 	m_player->Update(); //座標変更
 
-	mapdownDecison();	//マップチップとの下の当たり判定
-	mapsideDecison();	//マップチップとの横の当たり判定
-	mapjumpDecison();	//マップチップとの上の当たり判定
-
 	//スイッチ
 	if(CollisionSwitch())
 		m_switch->Swtiching();	//スイッチのオンオフの切り替え

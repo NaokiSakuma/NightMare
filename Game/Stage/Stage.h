@@ -75,9 +75,6 @@ public:
 	void Update();		//アップデート
 	void ObjectDraw();	//オブジェクトの描画
 	void DrawSprite(int grp_x, int grp_y, int grp_w, int grp_h, int i, int j);	//スプライトの描画
-	void mapdownDecison();	//マップチップとの下の当たり判定
-	void mapsideDecison();	//マップチップとの横の当たり判定
-	void mapjumpDecison();	//マップチップとの上の当たり判定
 	bool CollisionSwitch();
 	void MapDownDecison();	//マップチップとの下の当たり判定
 	void MapSideDecison();	//マップチップとの横の当たり判定
